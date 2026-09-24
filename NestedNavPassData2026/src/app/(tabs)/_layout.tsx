@@ -7,6 +7,11 @@ export default function TabsLayout() {
   const { name, activity } = useLocalSearchParams(); // Retrieve passed data
   const router = useRouter();
 
+  //If we want to run a side function outside of mian functionality.
+  //Use to do certain setup features when page Loads OR
+  //when the variables change
+  //The dependency array [name, activity] tells the useEffect 
+  // which values it depends upon
   useEffect(() => {
     if (!name || !activity) {
       router.replace("/"); // Redirect to entry screen if no data
